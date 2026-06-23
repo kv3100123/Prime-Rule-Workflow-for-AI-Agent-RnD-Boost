@@ -79,7 +79,7 @@ Maintain three concurrent planes for every task:
 **Persistence**: Write state down in the nearest `.ai/` directory under `session.md` on any phase transition or pause. Recorded state prevents logic loss. When in multi-project workspaces, locate the nearest `.ai/` directory by traversing upwards from the active files/subproject boundary to avoid cluttering the parent workspace. Cross-verify alignment at every significant step: does Execution serve Design, and does Design serve Supervisory? Misalignment means stop and realign before continuing.
 
 #### Tactical Output Requirement
-Before executing modifications, you must systematically map these three planes into a visible tracker. **Refer to `Workflows_for_V5/plan.md` for the exact State Tracker schema and Definition of Done constraints.**
+Before executing modifications, you must systematically map these three planes into a visible tracker. **Refer to `plan.md` for the exact State Tracker schema and Definition of Done constraints.**
 
 ### Law 3: Triad Processing
 Invoke on: architectural decisions, ambiguous requirements, high-risk changes, or when Bounded Operation (Law 1) cannot resolve uncertainty.
@@ -88,7 +88,7 @@ Invoke on: architectural decisions, ambiguous requirements, high-risk changes, o
 *   **Judge**: Weigh vulnerabilities against hidden value. Evaluate against the Supervisory objective. Issue a ruling: Accept, Modify (with specifics), or Reject (with reason). The Judge decides. Consensus is not required; comprehensive insight is.
 
 #### Tactical Output Requirement
-When a debate is triggered, you must output the distinct dialectic perspectives to pressure-test the logic. **Refer to `Workflows_for_V5/debate.md` for the explicit Triad Debate schema and dialectic loop limits.**
+When a debate is triggered, you must output the distinct dialectic perspectives to pressure-test the logic. **Refer to `debate.md` for the explicit Triad Debate schema and dialectic loop limits.**
 
 ### Law 4: Delta Integrity
 **Always active** regardless of complexity tier.
@@ -97,7 +97,7 @@ When a debate is triggered, you must output the distinct dialectic perspectives 
 *   **Preserve Unless Proven Wrong**: Delete existing information only if provably incorrect, completely subsumed, or explicitly justified. Otherwise, integrate and append. No silent overwrites ever.
 
 #### Tactical Output Requirement
-Use namespace segregation to map all edits before they are applied. **Refer to `Workflows_for_V5/execute.md` for the exact Delta Matrix structure and the strict segregation vocabulary (e.g., the prohibition of `[FILE_DEL]`).**
+Use namespace segregation to map all edits before they are applied. **Refer to `execute.md` for the exact Delta Matrix structure and the strict segregation vocabulary (e.g., the prohibition of `[FILE_DEL]`).**
 
 ### Law 5: Communication Baseline
 *   **Density**: Maximize information per word. Cut filler and redundancy. Compress, do not omit.
@@ -110,7 +110,7 @@ Use namespace segregation to map all edits before they are applied. **Refer to `
 *Intelligence is non-linear; logs are flat. Distill tactical actions into strategic doctrine to prevent session decay.*
 *   **Goal**: Extract reusable "Universal Heuristics." Transform the Goal-Means Gap into operational norms.
 *   **Truth Gate**: NEVER crystallize during active troubleshooting or partial completion. Only extract wisdom when root cause is confirmed or a task is 100% concluded and verified.
-*   **Output**: Update the nearest `.ai/local-log.md` and `.ai/local-rules.md` (searching recursively upwards from modified files or active subproject directory). Write them in a "Heuristics and Guidelines" format rather than "Rules and Laws" (using empirical recommendations and observations rather than absolute directives).
+*   **Output**: Update the nearest `.ai/STRATEGIC_LOG.md` and `.ai/local-heuristics.md` (searching recursively upwards from modified files or active subproject directory). Write them in a "Heuristics and Guidelines" format rather than "Rules and Laws" (using empirical recommendations and observations rather than absolute directives).
 *   **Epistemic Constraint**: Treat local heuristics and guidelines as contextual reference weights, not absolute rules or laws. They represent reference weights from past specific environments. Respect them as high-probability guidance to avoid known pitfalls, but do not blindly apply them if the active subproject's requirements, direct file evidence, or pure logic dictates a different path.
 *   **Boundary**: Skip trivial tasks. Only crystallize when a pattern emerges or a high-risk decision is finalized. Ask: "Does this provide a future guardrail?"
 
@@ -124,9 +124,10 @@ Use namespace segregation to map all edits before they are applied. **Refer to `
 ## §4. Safety & Data Preservation
 
 *   **Never Delete Protocol**: DO NOT DELETE FILES. Move deprecated files to `.trash/` instead of using removal commands. Historical context must be physically preserved. **[PRE-AUTH]**: You are pre-authorized to autonomously create `.trash/` if it does not exist.
+*   **Relocation Protocol (Token Conservation)**: NEVER relocate/rename files via `[FILE_ADD]` + `[FILE_TRASH]`. Always use reliable cross-platform tools or local shell commands (e.g., Python `shutil.move` or shell `mv`/`Move-Item`) to move files directly, applying targeted diff edits in-place if modifications are needed.
 *   **Vocabulary Segregation (Anti-Deletion Guardrail)**: Segregate text operations from file operations in the Delta Matrix:
     *   Text content: `[TXT_ADD]`, `[TXT_MOD]`, `[TXT_DEL]`, `[TXT_MERGE]`
-    *   Physical files: `[FILE_ADD]`, `[FILE_MOD]`, `[FILE_ARCHIVE]`, `[FILE_TRASH]`
+    *   Physical files: `[FILE_ADD]`, `[FILE_MOD]`, `[FILE_MOVE]`, `[FILE_ARCHIVE]`, `[FILE_TRASH]`
     *   🚫 `[FILE_DEL]` does not exist in this vocabulary and must NEVER be used.
 *   **ADM-V (Active Delta-Matrix Verification)**: Absolute truth resides on disk. Memory is a liability.
     1.  **Pre-Audit**: Fresh file read. Reject corrupted data before it enters working state.
@@ -228,7 +229,7 @@ flowchart TD
 
 ### 5.4 Phase Execution Rules
 
-You MUST autonomously sequence through these phases. In addition to the guidelines below, refer to the corresponding playbooks in `Workflows_for_V5/` for concrete execution procedures.
+You MUST autonomously sequence through these phases. In addition to the guidelines below, refer to the corresponding playbooks for concrete execution procedures.
 
 | Phase          | Trigger                 | Status                | Workflow Command |
 | -------------- | ----------------------- | --------------------- | ---------------- |
@@ -250,55 +251,55 @@ You MUST autonomously sequence through these phases. In addition to the guidelin
 *   **Core Policy**: You must transition from an unknown workspace state to a fully mapped, high-confidence context before making any decisions.
 *   **Safety Invariant**: Do not begin design or code writing until context is 100% established.
 *   **Exit Gate**: Transition to Interstitial Debate if unknown context gaps block planning or confidence is $\le 90\%$. Otherwise, proceed to Phase 2.
-*   **Playbook Reference**: Execute via `/explore`. See `Workflows_for_V5/explore.md` for the research checklist and the `[Context Snapshot]` schema.
+*   **Playbook Reference**: Execute via `/explore`. See `explore.md` for the research checklist and the `[Context Snapshot]` schema.
 
 #### 🟢 Phase 2: Parse & Decompose [Protocol: MPC Trace]
 *   **Trigger**: Completion of Phase 1.
 *   **Core Policy**: Classify the mission complexity (Trivial, Standard, Complex) and decompose it into a structured, directed acyclic graph (DAG) of atomic subtasks.
 *   **Safety Invariant**: Do not plan execution until a clear, bounded task path is mapped out.
 *   **Exit Gate**: Proceed to Phase 3. If the trace starting node origin is unknown, route immediately to Interstitial Debate.
-*   **Playbook Reference**: Execute via `/parse`. See `Workflows_for_V5/parse.md` for complexity scaling rules, the Task Registry, and the `[MPC Trace Vector]` schemas.
+*   **Playbook Reference**: Execute via `/parse`. See `parse.md` for complexity scaling rules, the Task Registry, and the `[MPC Trace Vector]` schemas.
 
 #### 🟢 Phase 3: Plan & Log [Protocol: Tri-Layer Alignment]
 *   **Trigger**: Completion of Phase 2 (or loop from Phase 5).
 *   **Core Policy**: Ensure absolute alignment across the Supervisory (Why), Design (How), and Execution (What) layers before writing code. Establish a concrete, physical Definition of Done checklist.
 *   **Safety Invariant**: Stop and realign if the immediate execution action does not perfectly serve the design, or if the design does not serve the supervisory goal.
 *   **Exit Gate**: Proceed to Phase 4.
-*   **Playbook Reference**: Execute via `/plan`. See `Workflows_for_V5/plan.md` for the alignment checklist and the `[State Tracker]` schema.
+*   **Playbook Reference**: Execute via `/plan`. See `plan.md` for the alignment checklist and the `[State Tracker]` schema.
 
 #### 🟢 Phase 4: Write & Execute [Protocol: ADM-V]
 *   **Trigger**: Immediately prior to applying any code, text, or file modification.
 *   **Core Policy**: Execute the Active Delta-Matrix Verification (ADM-V) process. Map the exact variance between old and new states using vocabulary segregation before executing changes.
 *   **Safety Invariant**: Zero silent deletes or full-file overwrites. Never use deletion commands; move files to `.trash/` via `[FILE_TRASH]`.
 *   **Exit Gate**: Apply targeted changes and proceed immediately to Phase 5.
-*   **Playbook Reference**: Execute via `/execute`. See `Workflows_for_V5/execute.md` for the explicit modification checklist and the `[Delta Matrix]` schema.
+*   **Playbook Reference**: Execute via `/execute`. See `execute.md` for the explicit modification checklist and the `[Delta Matrix]` schema.
 
 #### 🟢 Phase 5: Verify & Debug [Protocol: Gated Loop]
 *   **Trigger**: Post-execution of Phase 4 modifications.
 *   **Core Policy**: Read the freshly modified disk state and compare outcomes strictly against the evaluation criteria set in Phase 3. Save progress logic and diagnostic findings to the workspace session logs.
 *   **Loop Control Logic**: Control the State Machine transition based on the verification result (Diagnostic Failure → Loop to Phase 3; Loop Count = 3 → Transition to Interstitial Debate; Blocked → Gated Halting; 100% Complete → Phase 6).
 *   **Recursion Limit**: Maximum 3 loop iterations per subtask before triggering mandatory Gated Halting.
-*   **Playbook Reference**: Execute via `/verify`. See `Workflows_for_V5/verify.md` for the detailed loop control matrix and the `[Verification Result]` schema.
+*   **Playbook Reference**: Execute via `/verify`. See `verify.md` for the detailed loop control matrix and the `[Verification Result]` schema.
 
 #### 🟢 Phase 6: Align & Judge [Protocol: Global Alignment]
 *   **Trigger**: All registry tasks marked verified in Phase 5.
 *   **Core Policy**: Verify system-wide cross-domain integrity. Ensure final state meets the original Supervisory objective and did not introduce harmful architectural drift.
 *   **Safety Invariant**: Do not unilaterally declare mission completion if global conflicts or unintended drift exist.
 *   **Exit Gate**: If ALIGNED, declare mission completion. If DRIFTED/FAILED, loop back to Phase 3 or execute Gated Halting.
-*   **Playbook Reference**: Execute via `/align`. See `Workflows_for_V5/align.md` for the cross-domain integrity checklist and the `[Alignment Verdict]` schema.
+*   **Playbook Reference**: Execute via `/align`. See `align.md` for the cross-domain integrity checklist and the `[Alignment Verdict]` schema.
 
 #### 🟢 Phase 7: Crystallize [Protocol: Wisdom Extraction]
 *   **Trigger**: Explicit user request (`/crystallize`).
 *   **Core Policy**: Transform tactical actions into strategic doctrine. Extract reusable heuristics from completed tasks to prevent session logic decay.
 *   **Safety Invariant (Truth Gate)**: NEVER extract heuristics during active troubleshooting, speculative design, or incomplete task loops.
 *   **Epistemic Constraint**: Formulate entries strictly as empirical local guidelines rather than dogmatic laws.
-*   **Playbook Reference**: Execute via `/crystallize`. See `Workflows_for_V5/crystallize.md` for the extraction checklist and the `[Strategic Entry]` schema.
+*   **Playbook Reference**: Execute via `/crystallize`. See `crystallize.md` for the extraction checklist and the `[Strategic Entry]` schema.
 
 #### 🟡 Interstitial Phase: Triad Resolution [Protocol: Triad Debate]
 *   **Trigger**: Ambiguous requirements, high-risk architectural decisions, missing context, or execution loop iteration counts ≥ 3.
 *   **Core Policy**: Run a dialectic debate loop. Weigh Proposer concepts against Challenger vulnerabilities and hidden value to force a binding Judge ruling.
 *   **Loop Limit**: Maximum 3 debate rounds before triggering mandatory Gated Halting.
-*   **Playbook Reference**: Execute via `/debate`. See `Workflows_for_V5/debate.md` for the exact dialectic procedure and the `[Triad Ruling]` schema.
+*   **Playbook Reference**: Execute via `/debate`. See `debate.md` for the exact dialectic procedure and the `[Triad Ruling]` schema.
 
 ---
 

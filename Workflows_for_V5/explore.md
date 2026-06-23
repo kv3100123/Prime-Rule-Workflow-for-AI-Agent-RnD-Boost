@@ -1,7 +1,7 @@
 ---
 title: "Phase 1: Explore & Research Playbook"
 abstract: "Playbook governing context gathering and research at the start of any engineering task."
-date: 2026-06-22
+date: 2026-06-23
 keywords: ["explore", "research", "context", "playbook"]
 status: "active"
 ---

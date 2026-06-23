@@ -75,15 +75,17 @@ flowchart TD
 ## 📂 Repository Structure
 
 *   **[GEMINI_v5.md](./GEMINI_v5.md)**: The core system prompt containing the 8 Laws of Tactical Execution, Multi-Task Orchestration protocols, and the primary state topologies.
-*   **[Workflows_for_V5/](./Workflows_for_V5/)**: Detailed playbook guides defining agent behavior in each phase:
+*   **[Workflows_for_V5/](./Workflows_for_V5/)**: Detailed playbook guides defining agent behavior in the automatic state machine loop:
     *   [explore.md](./Workflows_for_V5/explore.md) (Phase 1: Context Acquisition)
     *   [parse.md](./Workflows_for_V5/parse.md) (Phase 2: Task Decomposition)
     *   [plan.md](./Workflows_for_V5/plan.md) (Phase 3: State Tracker & DoD)
     *   [execute.md](./Workflows_for_V5/execute.md) (Phase 4: Delta Matrix Rules)
     *   [verify.md](./Workflows_for_V5/verify.md) (Phase 5: Gated Loops)
     *   [align.md](./Workflows_for_V5/align.md) (Phase 6: Global Alignment)
-    *   [crystallize.md](./Workflows_for_V5/crystallize.md) (Phase 7: Universal Heuristics extraction)
     *   [debate.md](./Workflows_for_V5/debate.md) (Interstitial Triad Resolution)
+*   **[Independent_Workflows/](./Independent_Workflows/)**: Playbooks for workflows triggered manually (outside the automatic state machine loop):
+    *   [crystallize.md](./Independent_Workflows/crystallize.md) (Phase 7: Universal Heuristics extraction)
+    *   [consolidate.md](./Independent_Workflows/consolidate.md) (Project Knowledge Consolidation)
 *   **[.ai/](./.ai/)**: Persistent workspace configuration and session logs folder:
     *   [local-log.md](./.ai/local-log.md): Record of design decisions, milestones, and session logs.
     *   [local-rules.md](./.ai/local-rules.md): Strategic local guidelines and empirical heuristics derived from post-execution crystallization.
@@ -97,7 +99,9 @@ To configure your agent (e.g., Cursor, Claude Code, or Antigravity IDE) to use t
 
 1. **System Prompt / Global Rules**: Copy the contents of [GEMINI_v5.md](./GEMINI_v5.md) into your IDE's system rules setting or save it as `.cursorrules` / `.windsurfrules` at your project root.
 2. **Workflows**: Place the `Workflows_for_V5` directory under `.gemini/config/global_workflows/` or reference them locally to guide phase transitions.
-3. **Run Commands**: Use `/explore`, `/parse`, `/plan`, `/execute`, `/verify`, `/align`, `/debate`, `/crystallize` commands to trigger transitions.
+3. **Run Commands**:
+    *   **Automatic Loop**: `/explore`, `/parse`, `/plan`, `/execute`, `/verify`, `/align`, `/debate`
+    *   **Manual / Independent**: `/crystallize`, `/consolidate`
 
 ---
 

@@ -29,7 +29,8 @@ Categorize and map the target changes before executing them. Output the matrix e
         *   `[TXT_MERGE]`: Combining blocks of text or logic.
     *   **Physical file changes**:
         *   `[FILE_ADD]`: Creating a new file on disk.
-        *   `[FILE_MOD]`: Modifying a file's location or configuration parameters.
+        *   `[FILE_MOD]`: Modifying a file's configuration parameters.
+        *   `[FILE_MOVE]`: Relocating or renaming a file path on disk without rewriting its entire contents (e.g. using `Move-Item`, `mv`, or `git mv`).
         *   `[FILE_ARCHIVE]`: Deprecating a file and moving it to the `Archive/` directory to preserve history.
         *   `[FILE_TRASH]`: Deprecating temporary garbage/OS files and moving them to the `.trash/` folder.
         *   🚫 **`[FILE_DEL]` IS STRICTLY FORBIDDEN**. File deletion is not supported in this vocabulary. Deprecated files must be safely archived or trashed.
@@ -37,6 +38,7 @@ Categorize and map the target changes before executing them. Output the matrix e
 ### Step 3: Run Delta-Only Modifications
 *   Use the most precise targeted edit tool available in your current environment to apply changes to the exact line ranges.
 *   Avoid full-file overwrites unless writing a brand-new file (`[FILE_ADD]`).
+*   **The Relocation Constraint**: Never relocate/rename files via `[FILE_ADD]` + `[FILE_TRASH]`. Always use reliable cross-platform tools or local shell commands (e.g., Python `shutil.move` or shell `mv`/`Move-Item`) to move files directly, applying targeted diff edits in-place if modifications are needed.
 
 ---
 
