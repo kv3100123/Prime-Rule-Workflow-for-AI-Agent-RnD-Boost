@@ -1,5 +1,9 @@
 ---
-description: "Phase 3: Plan & Log — Tactical Planning & State Tracker Playbook"
+title: "Phase 3: Plan & Log Playbook"
+abstract: "Playbook governing the formulation of the execution plan and the alignment of the supervisory, design, and execution planes."
+date: 2026-06-22
+keywords: ["plan", "log", "tri-layer", "alignment", "definition of done"]
+status: "active"
 ---
 
 # Phase 3: Plan & Log [PLAYBOOK: TRI-LAYER ALIGNMENT]
@@ -49,6 +53,7 @@ Before running any file modifications, output the State Tracker block exactly as
 
 #### 3. [Execution] (The What)
 *   **Next Atomic Subtask**: [The single, isolated file action to run next]
+*   **Iteration**: [X/3]
 ```
 
 ---

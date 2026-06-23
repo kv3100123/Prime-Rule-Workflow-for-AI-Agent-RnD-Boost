@@ -1,4 +1,12 @@
-# Convergent Cognitive Architecture (V5)
+---
+title: "Convergent Cognitive Architecture (V5)"
+abstract: "Project landing page and architecture overview of the Prime Protocols V5 for agentic engineering systems."
+date: 2026-06-22
+keywords: ["agentic", "cognitive", "architecture", "rules", "workflows"]
+status: "active"
+---
+
+# 🌌 Convergent Cognitive Architecture (V5)
 
 > **The Prime Protocols V5**: A dual-layered agentic AI coding engine combining a structured **Mental OS (Global Rules)** and a monotonic **Execution Playbook (Workflow Engine)**.
 
@@ -59,6 +67,11 @@ To configure your agent (e.g., Cursor, Claude Code, or Antigravity IDE) to use t
 1. **System Prompt / Global Rules**: Copy the contents of [GEMINI_v5.md](./GEMINI_v5.md) into your IDE's system rules setting or save it as `.cursorrules` / `.windsurfrules` at your project root.
 2. **Workflows**: Place the `Workflows_for_V5` directory under `.gemini/config/global_workflows/` or reference them locally to guide phase transitions.
 3. **Run Commands**: Use `/explore`, `/parse`, `/plan`, `/execute`, `/verify`, `/align`, `/debate`, `/crystallize` commands to trigger transitions.
+
+---
+
+## 👤 Author
+* **kv3100123** - [@kv3100123](https://github.com/kv3100123)
 
 ---
 

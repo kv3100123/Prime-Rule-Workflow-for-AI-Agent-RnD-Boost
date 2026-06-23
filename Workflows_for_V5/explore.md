@@ -1,5 +1,9 @@
 ---
-description: "Phase 1: Explore & Research — Tactical Context Acquisition Playbook"
+title: "Phase 1: Explore & Research Playbook"
+abstract: "Playbook governing context gathering and research at the start of any engineering task."
+date: 2026-06-22
+keywords: ["explore", "research", "context", "playbook"]
+status: "active"
 ---
 
 # Phase 1: Explore & Research [PLAYBOOK: CONTEXT ACQUISITION]
@@ -8,11 +12,19 @@ This playbook governs context gathering at the start of any task or subtask. Fol
 
 ---
 
+## 🚀 Bootstrap Protocol (How to Initiate)
+Whenever a new user task/prompt is received, the agent must bootstrap the workflow engine:
+1. **Complexity Gate Check**: Silently classify the task complexity (Trivial, Standard, Complex).
+2. **Phase 1 Initiation**: For Standard or Complex tasks, the agent **must** initiate Phase 1 (Explore) in its very first response block. The response must immediately begin with the `### 🔍 Context Snapshot` block and run context-acquisition tools. Proposing plans or modifying files in this first response block before context is established is strictly prohibited.
+
+---
+
 ## 🛠️ Step-by-Step Research Checklist
 
 ### Step 1: Read Explicitly Mentioned Files
 *   Identify all files, directories, or code symbols mentioned by the user or within active session documents.
 *   Audit them completely using the `view_file` tool to understand their structure and internal logic. Do not guess what lies inside.
+*   Check the YAML front-matter header of markdown documents first to assess relevance before reading the entire file.
 
 ### Step 2: Traverse Adjacent Files & Configurations
 *   List contents of active subproject folders using `list_dir`.
@@ -64,6 +76,6 @@ After completing the research checklist, output your findings using the followin
 *   **Gate A: Sufficiency Check**
     *   *Condition*: All critical context parameters are resolved (no High/Medium confidence gaps in `[Unknown]`).
     *   *Action*: Proceed to **Phase 2: Parse & Decompose** (`/parse`).
-*   **Gate B: Critical Gaps Detected**
-    *   *Condition*: Gaps exist in the `[Unknown]` block that make task planning highly speculative or risky.
+*   **Gate B: Critical Gaps / Low Confidence Detected**
+    *   *Condition*: Gaps exist in the `[Unknown]` block that make task planning highly speculative or risky, OR the confidence level of the proposed solution/approach is **$\le 90\%$**.
     *   *Action*: Do not guess. Trigger a `/debate` (Triad Resolution) to resolve the missing parameters or halt and request direct user input.

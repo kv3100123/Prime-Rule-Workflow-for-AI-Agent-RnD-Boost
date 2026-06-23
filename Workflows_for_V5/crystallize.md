@@ -1,5 +1,9 @@
 ---
-description: "Phase 7: Crystallize — Tactical Crystallization & Heuristic-Led Playbook"
+title: "Phase 7: Crystallize Playbook"
+abstract: "Playbook governing post-task knowledge extraction and empirical local heuristics generation."
+date: 2026-06-22
+keywords: ["crystallize", "heuristics", "wisdom", "extraction", "playbook"]
+status: "active"
 ---
 
 # Phase 7: Crystallize [PLAYBOOK: WISDOM EXTRACTION]
@@ -26,16 +30,16 @@ This playbook governs post-task knowledge extraction, transforming context-speci
 *   Document errors, missteps, or suboptimal paths (the "Delta").
 *   Frame failures as historical navigation references (e.g. "Lessons from failed attempts/variances"), not as rigid laws.
 
-### Step 3: Extract Protocol Abstraction (`local-heuristics.md`)
+### Step 3: Extract Protocol Abstraction (`local-rules.md`)
 *   Extract successful vectors and generalize them to be domain-independent.
-*   **The Heuristic Framing Rule**: Write all entries in `local-heuristics.md` as **Empirical Heuristics and Local Guidelines** rather than rigid "Rules and Laws".
+*   **The Heuristic Framing Rule**: Write all entries in `local-rules.md` as **Empirical Heuristics and Local Guidelines** rather than rigid "Rules and Laws".
     *   Avoid dogmatic imperatives ("never", "always", "must", "law").
     *   Use advisory recommendations and empirical observations (e.g., "we found that...", "it is recommended to...", "guidelines suggest...").
 
 ### Step 4: Integrity Cross-Check
 Before writing any files to the `.ai/` directory, perform this verification:
-1.  **Segregate Failure**: Ensure failed trajectories are logged strictly in `references.md`, never in `local-heuristics.md`.
-2.  **Verify Candidates**: Confirm every proposed heuristic in `local-heuristics.md` matches the actual concluded solution.
+1.  **Segregate Failure**: Ensure failed trajectories are logged strictly in `references.md`, never in `local-rules.md`.
+2.  **Verify Candidates**: Confirm every proposed heuristic in `local-rules.md` matches the actual concluded solution.
 3.  **Active Purge**: If a previously saved guideline is contradicted by new findings, update or deprecate it immediately.
 
 ---

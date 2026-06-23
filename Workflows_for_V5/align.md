@@ -1,5 +1,9 @@
 ---
-description: "Phase 6: Align & Judge — Tactical Global Alignment Playbook"
+title: "Phase 6: Align & Judge Playbook"
+abstract: "Playbook governing system-wide cross-domain integrity and architectural alignment checks."
+date: 2026-06-22
+keywords: ["align", "judge", "integrity", "drift", "audit"]
+status: "active"
 ---
 
 # Phase 6: Align & Judge [PLAYBOOK: GLOBAL ALIGNMENT]
@@ -46,7 +50,7 @@ Once the checklist is complete, output the verdict exactly as formatted below:
 
 *   **ALIGNED**
     *   *Condition*: All requirements satisfied, no harmful drift, cross-domain check passed.
-    *   *Action*: Unilaterally declare macro completion. Transition to Phase 7 if the user requests crystallization.
+    *   *Action*: Unilaterally declare macro completion. Transition to Phase 7 (Crystallize) strictly when the user manually requests crystallization via the `/crystallize` command.
 *   **DRIFTED**
     *   *Condition*: Non-harmful architectural changes were made or minor corrections are needed.
     *   *Action*: Document the drift. Loop back to Phase 3 (`/plan`) to apply corrections or present drift justifications to the user.

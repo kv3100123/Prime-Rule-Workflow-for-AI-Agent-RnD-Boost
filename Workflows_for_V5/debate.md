@@ -1,5 +1,9 @@
 ---
-description: "Interstitial: Triad Resolution — Tactical Triad Debate Playbook"
+title: "Interstitial Phase: Triad Resolution Playbook"
+abstract: "Playbook governing the structured pressure-testing of architectural models, ambiguous requests, and high-risk operations."
+date: 2026-06-22
+keywords: ["debate", "triad", "resolution", "proposer", "challenger", "judge"]
+status: "active"
 ---
 
 # Interstitial: Triad Resolution [PLAYBOOK: TRIAD DEBATE]
@@ -20,6 +24,7 @@ Execute a Triad Debate immediately when any of the following conditions are met:
     *   Contradictory constraints given by the user.
     *   High-risk file modifications with sparse documentation.
     *   When Bounded Operation (Law 1) cannot resolve logic vectors.
+    *   When the confidence level of the proposed solution/approach is $\le 90\%$.
 
 ### Step 2: Conduct the Dialectic Loop
 Execute the debate using three distinct, sequential roles:

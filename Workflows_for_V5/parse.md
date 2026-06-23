@@ -1,5 +1,9 @@
 ---
-description: "Phase 2: Parse & Decompose — Tactical Task Decomposition Playbook"
+title: "Phase 2: Parse & Decompose Playbook"
+abstract: "Playbook governing task parsing, complexity classification, and MPC trace vector formulation."
+date: 2026-06-22
+keywords: ["parse", "decompose", "mpc", "trace", "registry", "tasks"]
+status: "active"
 ---
 
 # Phase 2: Parse & Decompose [PLAYBOOK: MPC TRACE]
@@ -31,6 +35,7 @@ Define the logical boundary of the task using Model Predictive Control (MPC) for
     ```markdown
     ### 🧩 MPC Trace
     `[t-2: <keyword>] → [t-1: <keyword>] → [Task: <keyword>] → [t+1: <keyword>] → [t+2: <keyword>]`
+    *(Note: For brand-new greenfield implementations where historical or future nodes do not logically exist yet, you may gracefully fall back to a 3-Node Vector.)*
     ```
 
 ### Step 3: Map Parallel Threads & Dependencies
