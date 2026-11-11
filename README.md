@@ -10,7 +10,9 @@ status: "active"
 
 > **The Prime Protocols V5**: A dual-layered agentic AI coding engine combining a structured **Mental OS (Global Rules)** and a monotonic **Execution Playbook (Workflow Engine)**.
 
-This repository contains the complete specification and phase-by-phase execution manuals for running high-precision engineering agents (such as the Antigravity IDE Agent) across complex, multi-domain programming environments.
+This repository contains the complete specification and phase-by-phase execution manuals for running high-precision engineering agents (such as Antigravity, Claude Code and other AI agents) across complex, multi-domain programming environments.
+
+> **Version note:** the files here are **V5**, written for Antigravity with Gemini. **V6** is in preparation. It is built from one source for any AI agent host, starting with Claude Code and Antigravity, and adds skills, hooks and a one-command installer. It will be published here as a release.
 
 ---
 
